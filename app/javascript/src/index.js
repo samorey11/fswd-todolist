@@ -14,8 +14,6 @@ indexTasks(function (response) {
   $("#tasks").html(htmlString);
 });
 
-postTask ( function (ele) {
-  var content = ($(ele).children('#todo-input').text());
-
-  return content;
-})
+postTask(function (content) {
+  console.log(content);
+});
