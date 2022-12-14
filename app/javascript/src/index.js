@@ -25,13 +25,4 @@ $(document).ready(function () {
 
     $("#tasks").html(htmlString);
   });
-
-<<<<<<< HEAD
-document.addEventListener('DOMContentLoaded', function () {
-  var todoInput = document.getElementById('todo-input')
-
-  console.log(todoInput.value)
-
-=======
->>>>>>> c6888ae66d53520d40f59e9b82f6c543c006880f
 });
