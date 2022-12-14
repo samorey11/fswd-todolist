@@ -14,9 +14,9 @@ indexTasks(function (response) {
   $("#tasks").html(htmlString);
 });
 
-handleSubmit(function (content ) {
-  e.preventDefault();
-  var content = $('#todo-input').text();
-  
-  postTask(content);
+document.addEventListener('DOMContentLoaded', function () {
+  var todoInput = document.getElementById('todo-input')
+
+  console.log(todoInput.value)
+
 });
