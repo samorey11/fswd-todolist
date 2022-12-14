@@ -13,3 +13,4 @@ indexTasks(function (response) {
 
   $("#tasks").html(htmlString);
 });
+

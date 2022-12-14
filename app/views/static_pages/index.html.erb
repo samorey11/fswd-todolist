@@ -4,6 +4,15 @@
   <div class="row">
     <div class="col-12">
       <h1 class="text-center mt-4">To Do List</h1>
+      <div className="row">
+          <div className="col-12">
+            <form onSubmit={this.handleSubmit} className="form-inline text-center my-4">
+              To-Do Item: <input
+              type="text"
+              className="form-control mr-sm-2"
+              placeholder="Fold Laundry"/>
+              <button type="submit" className="btn btn-primary mb-2">Submit</button>
+            </form>
       <div class="row" id="tasks"></div>
     </div>
   </div>
