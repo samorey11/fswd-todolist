@@ -5,18 +5,25 @@ import {
   postTask,
 } from "./requests.js";
 
-indexTasks(function (response) {
-  var htmlString = response.tasks.map(function(task) {
-    return "<div class='col-12 mb-3 p-2 border rounded task' data-id='" + task.id + "'> \ " + task.content + "\
-    </div>";
+$(document).ready(function () {
+
+  $('#add-button').click(function (e) {
+    e.preventDefault();
+
+    var content = $('#todo-input').val();
+
+    console.log(content);
+
+    postTask(content);
   });
 
-  $("#tasks").html(htmlString);
-});
+  indexTasks(function (response) {
+    var htmlString = response.tasks.map(function(task) {
+      return "<div class='col-12 mb-3 p-2 border rounded task' data-id='" + task.id + "'> \ " + task.content + "\
+      </div>";
+    });
 
-handleSubmit(function (content ) {
-  e.preventDefault();
-  var content = $('#todo-input').text();
-  
-  postTask(content);
+    $("#tasks").html(htmlString);
+  });
+
 });
