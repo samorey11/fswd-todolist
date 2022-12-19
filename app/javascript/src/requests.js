@@ -37,10 +37,7 @@ export var deleteTask = function (id, successCB, errorCB) {
   var request = {
     type: 'DELETE', 
     url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '?api_key=52',
-    success: function (response, successCB) {
-      indexTasks();
-      successCB;
-    },
+    success: successCB,
     error: errorCB
   }
 
