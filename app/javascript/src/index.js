@@ -26,6 +26,10 @@ function refreshList() {
 
 $(document).ready(function () {
   refreshList();
+  $('#todo').on('submit', function (e) {
+    e.preventDefault();
+    refreshList();
+  });
 
   $("#add-button").click(function (e) {
     e.preventDefault();
@@ -51,5 +55,5 @@ $(document).ready(function () {
     console.log(id);
 
     markComplete(id, refreshList);
-  })
+  });
 });
