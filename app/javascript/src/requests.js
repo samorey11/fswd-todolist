@@ -43,3 +43,14 @@ export var deleteTask = function (id, successCB, errorCB) {
 
   $.ajax(request);
 };
+
+export var markComplete = function (id, successCB, errorCB) {
+  var request = {
+    type: 'PUT',
+    url: 'https://fewd-todolist-api.onrender.com/tasks/' + id + '/mark_complete?api_key=52',
+    success: successCB,
+    error: errorCB
+  }
+
+  $.ajax(request);
+}

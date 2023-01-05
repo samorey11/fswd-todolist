@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-import { indexTasks, postTask, deleteTask } from "./requests.js";
+import { indexTasks, postTask, deleteTask, markComplete } from "./requests.js";
 
 function refreshList() {
   indexTasks(function (response) {
@@ -12,7 +12,7 @@ function refreshList() {
         task.content +
         "  <button id='delete-button' data-id='" +
         task.id +
-        "'>Delete</button><input type='checkbox' class='mark-complete' data-id='" +
+        "'>Delete</button><input type='checkbox' id='mark-complete' data-id='" +
         task.id +
         "'" +
         (task.completed ? "checked" : "") +
@@ -44,4 +44,12 @@ $(document).ready(function () {
 
     deleteTask(id, refreshList);
   });
+
+  $(document).on("click", "#mark-complete", function () {
+    var id = $(this).data("id");
+
+    console.log(id);
+
+    markComplete(id, refreshList);
+  })
 });
